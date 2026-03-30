@@ -1,0 +1,51 @@
+@model List<MyPortfolio.DAL.Entities.About>
+@{
+    ViewData["Title"] = "AboutList";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">About Sayfası</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">About Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Bu alandan tabloda kayıtlı olan tüm verileri görebilirsiniz.
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>SubDescription</th>
+                                    <th>Details</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.AboutId</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.SubDescription</td>
+                                        <td>@item.Details</td>
+                                        <td><a href="/About/DeleteAbout/@item.AboutId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/About/UpdateAbout/@item.AboutId" class="btn btn-warning">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/About/CreateAbout/" class="btn btn-primary">Yeni Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

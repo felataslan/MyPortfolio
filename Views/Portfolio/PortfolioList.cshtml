@@ -1,0 +1,55 @@
+@model List<MyPortfolio.DAL.Entities.Portfolio>
+@{
+    ViewData["Title"] = "PortfolioList";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Portfolio Sayfası</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Portfolio Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Bu alandan tabloda kayıtlı olan tüm verileri görebilirsiniz.
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>SubTitle</th>
+                                    <th>ImageUrl</th>
+                                    <th>Url</th>
+                                    <th>Description</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.PortfolioId</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.SubTitle</td>
+                                        <td>@item.ImageUrl</td>
+                                        <td>@item.Url</td>
+                                        <td>@item.Description</td>
+                                        <td><a href="/Portfolio/DeletePortfolio/@item.PortfolioId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Portfolio/UpdatePortfolio/@item.PortfolioId" class="btn btn-warning">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/Portfolio/CreatePortfolio/" class="btn btn-primary">Yeni Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

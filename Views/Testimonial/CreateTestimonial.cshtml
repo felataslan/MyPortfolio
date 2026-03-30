@@ -1,0 +1,41 @@
+@model MyPortfolio.DAL.Entities.Testimonial
+@{
+    ViewData["Title"] = "CreateTestimonial";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Yeni Testimonial Ekle</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Bilgileri Doldurun</div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="form-group">
+                                <label>NameSurname</label>
+                                <input type="text" class="form-control" name="NameSurname" />
+                            </div>
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="Title" />
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <input type="text" class="form-control" name="Description" />
+                            </div>
+                            <div class="form-group">
+                                <label>ImageUrl</label>
+                                <input type="text" class="form-control" name="ImageUrl" />
+                            </div>
+                            <button class="btn btn-success">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

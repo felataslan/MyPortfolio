@@ -1,0 +1,35 @@
+@model MyPortfolio.DAL.Entities.Feature
+@{
+    ViewData["Title"] = "UpdateFeature";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Feature Güncelle</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Bilgileri Güncelleyin</div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <input type="hidden" name="FeatureId" value="@Model.FeatureId" />
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="Title" value="@Model.Title" />
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <input type="text" class="form-control" name="Description" value="@Model.Description" />
+                            </div>
+
+                            <button class="btn btn-primary">Güncelle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
